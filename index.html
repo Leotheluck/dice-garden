@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Garden | Accueil</title>
+    <meta name="description" content="Le lanceur de dé le plus complet d'Internet ! Dés en 3D, Challenges, et Méga dés vous attendent...">
+    <link rel="stylesheet" href="./master.css">
+    <link rel="shortcut icon" href="./textures/logo.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Container for the on-load animation, with leaves and clouds that disappear from your screen, revealing the website -->
+    <div class="opening-animation">
+        <img src="./textures/leaf.png" class="leaf leaf-1">
+        <img src="./textures/leaf.png" class="leaf leaf-2">
+        <img src="./textures/leaf.png" class="leaf leaf-3">
+        <img src="./textures/leaf.png" class="leaf leaf-4">
+        <img src="./textures/clouds.png" class="clouds">
+    </div>
+    <!-- Container for the Dice History section, allowing to have a little explanation about the history of the dices -->
+    <div class="dice-history">
+        <div class="history-button"></div>
+        <div class="history-information">
+            <p class="history-p">Le saviez-vous ? Les dés existeraient depuis la préhistoire ! Certains dés ont été retrouvés vieux de plus de 4300 ans, leur origine semble être asiatique.</p>
+        </div>
+    </div>
+    <!-- Header of the page, containing logo, navigation bar and language options -->
+    <header>
+        <div class="header-logo">
+            <a class="header-logo-title" href="#">DiceGarden</a>
+        </div>
+        <div class="header-items">
+            <a href="#" class="nav-item">Traditionnel</a>
+            <a href="#challenge-anchor" class="nav-item">Challenger</a>
+            <a href="#mega-anchor" class="nav-item">Mega Dice</a>
+
+        </div>
+        <div class="header-language">
+            <a href="#" class="language-on">FR</a>
+            <a href="./index_en.html" class="language">EN</a>
+            <a href="./index_jp.html" class="language">JP</a>
+        </div>
+    </header>
+    <!-- Main container of the website -->
+    <main>
+        <!-- Traditional dice part, Up to 3 dices with 6 sides, dices rendered in 3D, ability to only re-roll one of the 3 dices, to get the total score and to only roll 1 or 2 dices -->
+        <div class="traditional-dice">
+            <div class="dice-container">
+                <div class="dice-one-full dice-full">
+                    <div class="dice-one dice-object">
+                        <div class="dice">
+                            <div class="dice-face front"></div>
+                            <div class="dice-face right"></div>
+                            <div class="dice-face back"></div>
+                            <div class="dice-face left"></div>
+                            <div class="dice-face top"></div>
+                            <div class="dice-face bottom"></div>
+                        </div>
+                    </div>
+                    <div class="dice-score">
+                        <h2 class="dice-score-title"></h2>
+                    </div>
+                </div>
+                <div class="dice-two-full dice-full">
+                    <div class="dice-two dice-object">
+                        <div class="dice">
+                            <div class="dice-face front"></div>
+                            <div class="dice-face right"></div>
+                            <div class="dice-face back"></div>
+                            <div class="dice-face left"></div>
+                            <div class="dice-face top"></div>
+                            <div class="dice-face bottom"></div>
+                        </div>
+                    </div>
+                    <div class="dice-score">
+                        <h2 class="dice-score-title"></h2>
+                    </div>
+                </div>
+                <div class="dice-three-full dice-full">
+                    <div class="dice-three dice-object">
+                        <div class="dice">
+                            <div class="dice-face front"></div>
+                            <div class="dice-face right"></div>
+                            <div class="dice-face back"></div>
+                            <div class="dice-face left"></div>
+                            <div class="dice-face top"></div>
+                            <div class="dice-face bottom"></div>
+                        </div>
+                    </div>
+                    <div class="dice-score">
+                        <h2 class="dice-score-title"></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="score-container">
+                <h2 class="total-score-title">Lancez les dés !</h2>
+                <div class="number-of-dices">
+                    <button class="substract-dice">-</button>
+                    <h3 class="dice-counter">1</h3>
+                    <button class="add-dice">+</button>
+                </div>
+                <button id="challenge-anchor" class="launch-button">Lancer</button>
+            </div>
+        </div>
+        <!-- Challenge Dice section, usage of the dice mechanic to a more original point, allowing you to randomize challenges you would have to do with your friends or so, ability to create custom challenges -->
+        <div class="challenge-dice">
+            <div class="challenge-container">
+                <div class="challenge-title-container">
+                    <h2 class="challenge-title">Challenger Dice</h2>
+                    <p class="active-challenge">Bienvenue dans le Challenger Dice ! Dans cette partie vous pourrez définir quel challenge vous aurez à faire au hasard ! Vous pouvez aussi entrer vos propres challenges dans la colonne de droite !</p>
+                </div>
+                <div class="challenge-list">
+                    <div class="challenge-object-one challenge-object">
+                        <h3 class="challenge-inside-title">Sportif</h3>
+                        <div class="challenge-inside">
+                            <p>1. Gainage (2 minutes)</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>2. 40 pompes</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>3. 20 abdos</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>4. 80 pompes</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>5. Course (20 minutes)</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>6. Consignes 1 à 3</p>
+                        </div>
+                        <button class="challenge-one-toggle challenge-toggle">Lancer</button>
+                    </div>
+                    <div class="challenge-object-two challenge-object">
+                        <h3 class="challenge-inside-title">Confinement</h3>
+                        <div class="challenge-inside">
+                            <p>1. Rester chez soi</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>2. Applaudir à 20h01</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>3. Être le DJ de son quartier</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>4. Fabriquer un masque</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>5. Chanter, mais en italien</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>6. Faire des pâtes, mais en italien</p>
+                        </div>
+                        <button class="challenge-two-toggle challenge-toggle">Lancer</button>
+                    </div>
+                    <div class="challenge-object-three challenge-object">
+                        <h3 class="challenge-inside-title">Personnalisé</h3>
+                        <div class="challenge-inside">
+                            <input class="challenge-input" type="text" placeholder="Votre challenge...">
+                        </div>
+                        <div class="challenge-inside">
+                            <input class="challenge-input" type="text" placeholder="Votre challenge...">
+                        </div>
+                        <div class="challenge-inside">
+                            <input class="challenge-input" type="text" placeholder="Votre challenge...">
+                        </div>
+                        <div class="challenge-inside">
+                            <input class="challenge-input" type="text" placeholder="Votre challenge...">
+                        </div>
+                        <div class="challenge-inside">
+                            <input class="challenge-input" type="text" placeholder="Votre challenge...">
+                        </div>
+                        <div class="challenge-inside">
+                            <input class="challenge-input" type="text" placeholder="Votre challenge...">
+                        </div>
+                        <button class="challenge-three-toggle challenge-toggle">Lancer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mega Dice section, a huge, like really huge, dice, allowing you to customize every side of it, you can roll a dice between 0 and 6, or between 150 and 2000. -->
+        <div id="mega-anchor" class="mega-dice">
+            <div class="mega-container">
+                <h2 class="mega-title">Mega Dice</h2>
+                <p class="mega-desc">Le "Mega Dice" est capable de tout ! Entrez simplement les deux valeurs qui encadreront ce dernier puis lancez-le !</p>
+                <div class="mega-values">
+                    <input class="mega-value-from" type="number" value="1">
+                    <p class="mega-wave">~</p>
+                    <input class="mega-value-to" type="number" value="600">
+                </div>
+                <h2 class="mega-output">Lancez le dé !</h2>
+                <button class="mega-launch">Lancer</button>
+            </div>
+        </div>
+    </main>
+    <!-- Footer section, simple information about the creator of the website -->
+    <footer class="footer">
+        <p>Copyright 2020 © Leo Largillet - HETIC.</p>
+    </footer>
+    <!-- Call for the JS script -->
+    <script src="./main.js"></script>
+</body>
+</html>

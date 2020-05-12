@@ -1,0 +1,897 @@
+/* Importation of the Roboto font through CSS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Applied the Roboto font to the whole page since I'm planning on using it everywhere, usage of smooth scroll behavoir for anchor clicks */
+*
+{
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+
+/************
+
+Animations and CSS stuff for the opening animation
+
+*************/
+
+
+
+/* Placement on the z axis for the opening animation & pointer events */
+.opening-animation
+{
+    position: absolute;
+    z-index: 99;
+    pointer-events: none;
+}
+
+/* Global styling and placement for the leaves, position fixed allowing to still have the animation even on scrolling */
+.leaf
+{
+    position: fixed;
+    height: 120vh;
+    opacity: 0%;
+}
+
+/* Styling for the first leaf used on the on-load animation */
+.leaf-1
+{
+    left: 50px;
+    top: 10vh;
+    transform: rotateZ(0deg);
+    animation: leaf-1 2.5s ease-in-out;
+}
+
+/* Keyframes animation for the first leaf */
+@keyframes leaf-1
+{
+    0%
+    {
+        left: -10vw;
+        top: 25vh;
+        transform: rotateZ(45deg);
+        opacity: 100%;
+        height: 120vh;
+    }
+    75%
+    {
+        opacity: 75%;
+    }
+    100%
+    {
+        left: -75vw;
+        top: 100vh;
+        transform: rotateZ(90deg);
+        opacity: 0%;
+        height: 175vh;
+    }
+}
+
+/* Styling for the 2nd leaf used on the on-load animation */
+.leaf-2
+{
+    left: 45vw;
+    top: -30vh;
+    transform: rotateZ(215deg);
+    animation: leaf-2 3s ease-in-out;
+}
+
+/* Keyframes animation for the 2nd leaf */
+@keyframes leaf-2
+{
+    0%
+    {
+        left: 50vw;
+        top: -30vh;
+        transform: rotateZ(215deg);
+        opacity: 100%;
+        height: 120vh;
+    }
+    75%
+    {
+        opacity: 75%;
+    }
+    100%
+    {
+        left: 100vw;
+        top: -80vh;
+        transform: rotateZ(275deg);
+        opacity: 0%;
+        height: 175vh;
+    }
+}
+
+/* Styling for the 3rd leaf used on the on-load animation */
+.leaf-3
+{
+    left: 40vw;
+    top: 10vh;
+    transform: rotateZ(245deg);
+    animation: leaf-3 2s ease-in-out;
+}
+
+/* Keyframes animation for the 3rd leaf */
+@keyframes leaf-3
+{
+    0%
+    {
+        left: 40vw;
+        top: 10vh;
+        transform: rotateZ(245deg);
+        opacity: 100%;
+        height: 120vh;
+    }
+    75%
+    {
+        opacity: 75%;
+    }
+    100%
+    {
+        left: 75vw;
+        top: 50vh;
+        transform: rotateZ(200deg);
+        opacity: 0%;
+        height: 175vh;
+    }
+}
+
+/* Styling for the 4th leaf used on the on-load animation */
+.leaf-4
+{
+    left: -15vw;
+    top: -20vh;
+    transform: rotateZ(10deg);
+    animation: leaf-4 2.5s ease-in-out;
+}
+
+/* Keyframes animation for the 4th leaf */
+@keyframes leaf-4
+{
+    0%
+    {
+        left: -15vw;
+        top: -20vh;
+        transform: rotateZ(10deg);
+        opacity: 100%;
+        height: 120vh;
+    }
+    75%
+    {
+        opacity: 75%;
+    }
+    100%
+    {
+        left: -75vw;
+        top: -100vh;
+        transform: rotateZ(-45deg);
+        opacity: 0%;
+        height: 175vh;
+    }
+}
+
+/* Styling for the clouds of the on-load animation */
+.clouds
+{
+    position: fixed;
+    height: 200vh;
+    top: -50vh;
+    opacity: 0%;
+    animation: clouds 1.5s ease-in;
+}
+
+/* CSS Animation using Keyframes for the on-load clouds that disappear */
+@keyframes clouds
+{
+    0%
+    {
+        opacity: 100%;
+        height: 200vh;
+        left: 0vw;
+        top: -50vh;
+        transform: rotateZ(0deg);
+    }
+    100%
+    {
+        opacity: 0%;
+        height: 400vh;
+        top: -135vh;
+        left: -50vw;
+        transform: rotateZ(-5deg);
+    }
+}
+
+
+
+/************
+
+HISTORY OF THE DICE TAB
+
+**************/
+
+
+
+/* Styling & placement for the book button, allowing you to get informations about the dices history */
+.history-button
+{
+    position: fixed;
+    left: 92vw;
+    top: 90vh;
+    width: 100px;
+    height: 70px;
+    background-image: url(./textures/book.png);
+    background-size: cover;
+    transition: 0.3s;
+    z-index: 90;
+}
+
+/* hover rotation effect for the little book */
+.history-button:hover
+{
+    cursor: pointer;
+    transform: rotateZ(10deg);
+}
+
+/* Container for the historical paragraph about the dices, not displayed because toggled in JS */
+.history-information
+{
+    position: fixed;
+    left: 75vw;
+    top: 75vh;
+    z-index: 90;
+    display: none;
+}
+
+/* Paragraph styling for the little book below */
+.history-p
+{
+    padding: 20px;
+    margin: 0;
+    background: #FFFFFF;
+    border-radius: 15px;
+    width: 20vw;
+    z-index: 90;
+    box-shadow: 0px 0px 77px 4px rgba(0,0,0,0.75);
+}
+
+
+
+/************
+
+    CSS for the header, body and footer
+
+*************/
+
+
+
+/* Avoids having a 15px border on the page */
+body
+{
+    margin: 0;
+}
+
+/* Styling & placement for the header, z-index 99 is to avoid override by the on-load animations */
+header
+{
+    background: #FFFFFF;
+    height: 7vh;
+    position: fixed;
+    width: 100vw;
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Container for the header logo */
+.header-logo
+{
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    width: 22vw;
+}
+
+/* Styling for the logo on the header, inclusion of the picture */
+.header-logo-title
+{
+    background-image: url(./textures/logo.png);
+    background-size: contain;
+    background-position: left -5px;
+    background-repeat: no-repeat;
+    font-size: 4vh;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    padding-left: 3vw;
+    margin-left: 2vw;
+    transition: opacity 0.2s ease-in;
+}
+
+/* Hover effect, indicating that the logo is clickable */
+.header-logo-title:hover
+{
+    cursor: pointer;
+    opacity: 80%;
+}
+
+/* Styling for the 3 main navigation elements */
+.nav-item
+{
+    padding: 12px;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: 300;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #000000;
+}
+
+/* Border appearing on the bottom when hovering the items */
+.nav-item:hover
+{
+    border-bottom: 4px solid black;
+}
+
+/* Container for the language section */
+.header-language
+{
+    width: 22vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Styling for the language options of the website */
+.language, .language-on
+{
+    color: #000000;
+    padding: 10px;
+}
+
+/* Color that is active for the language displayed */
+.language-on
+{
+    color: #ff5722;
+}
+
+/* Main container for the traditional dice section */
+.traditional-dice
+{
+    padding-top: 7vh;
+    height: 93vh;
+    background: url(./textures/garden.jpg);
+    background-position: center;
+    background-size: cover;
+    animation: background-pop 2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* On-load Animation for the background */
+@keyframes background-pop
+{
+    0%
+    {
+        background-position: center;
+        background-size: 75%;
+        filter: blur(8px);
+    }
+    75%
+    {
+        background-size: 105%;
+        filter: blur(0px);
+    }
+    100%
+    {
+        background-size: cover;
+    }
+}
+
+/* Container for the 3 dices */
+.dice-container
+{
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Container for each dice */
+.dice-object
+{
+    width: 200px;
+    height: 200px;
+    margin: 100px;
+    perspective: 600px;
+}
+
+/* Full container, helpful for placement & JS */
+.dice-full
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+/* Styling for the individual score of the dice, maybe could consider adding text-shadow (when there are 3 dices, the individual score of the first one kind of blends with the background */
+.dice-score-title
+{
+    font-size: 50px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+/* Allows me to display later on the two other dices that are made possible by the buttons */
+.dice-two-full, .dice-three-full
+{
+    display: none;
+}
+
+/* Styling & Placement for the main dice object */
+.dice
+{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+/* Styling & Placement for the face of the fice, detailed image per face just below */
+.dice-face
+{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+/* Front side of the 3D Dice, corresponds to 1, made on Photoshop */
+.front
+{
+    background-image: url(./textures/front.jpg);
+    background-size: contain;
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+/* Right side of the 3D Dice, corresponds to 6, made on Photoshop */
+.right
+{
+    background-image: url(./textures/right.jpg);
+    background-size: contain;
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+/* Back side of the 3D Dice, corresponds to 4, made on Photoshop */
+.back
+{
+    background-image: url(./textures/back.jpg);
+    background-size: contain;
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+/* Left side of the 3D Dice, corresponds to 2, made on Photoshop */
+.left
+{
+    background-image: url(./textures/left.jpg);
+    background-size: contain;
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+/* Top side of the 3D Dice, corresponds to 3, made on Photoshop */
+.top
+{
+    background-image: url(./textures/top.jpg);
+    background-size: contain;
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+/* Bottom side of the 3D Dice, corresponds to 5, made on Photoshop */
+.bottom
+{
+    background-image: url(./textures/bottom.jpg);
+    background-size: contain;
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* Styling for the global box containing total score, number of dices and launch button */
+.score-container{
+    background: #FFFFFF;
+    border-radius: 15px;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Adding flex to fit in the same row the "-", counter and "+" */
+.number-of-dices
+{
+    display: flex;
+}
+
+/* Styling for the total score of the 1-3 dices */
+.total-score-title
+{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Styling for the counter that shows how many dices are active */
+.dice-counter
+{
+    margin: 0;
+    color: #4d4c7d;
+}
+
+/* Styling for the "-" button, allowing you to remove one dice  */
+.substract-dice
+{
+    margin: 0 10px 0 10px;
+    width: 5vw;
+    font-size: 14px;
+    font-weight: bold;
+    background: gray;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.2s;
+}
+
+/* On hover effect for the "-" button, allowing you to remove one dice  */
+.substract-dice:hover
+{
+    cursor: pointer;
+    opacity: 80%;
+}
+
+/* Styling for the "+" button, allowing you to add one dice  */
+.add-dice
+{
+    margin: 0 10px 0 10px;
+    width: 5vw;
+    font-size: 14px;
+    font-weight: bold;
+    background: gray;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.2s;
+}
+
+/* On hover effect for the "+" button, allowing you to add one dice */
+.add-dice:hover
+{
+    cursor: pointer;
+    opacity: 80%;
+}
+
+/* Styling for the launch button */
+.launch-button
+{
+    height: 3vh;
+    background: #00bdaa;
+    color: #125b68;
+    border-radius: 15px;
+    outline: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 5vw;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+/* On hover effect for the launch button */
+.launch-button:hover
+{
+    cursor: pointer;
+    opacity: 80%;
+}
+
+/* Transition for the hover effect */
+.dice-object
+{
+    transition: 0.2s;
+}
+
+/* On hover effect that shows that the dice is clickable */
+.dice-object:hover
+{
+    cursor: pointer;
+    opacity: 0.7;
+    width: 190px;
+    height: 190px;
+}
+
+
+
+/**********
+
+CSS FOR THE CHALLENGE DICE
+
+**********/
+
+
+
+/* Big container for the whole challenge dice part */
+.challenge-dice
+{
+    height: 93vh;
+    background: linear-gradient(45deg, #021B79, #0575E6);
+}
+
+/* Bug fix for the Japanese version */
+.challenge-diceJP
+{
+    height: 113vh;
+}
+
+/* Container for the main Title of this section */
+.challenge-title-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    height: 30vh;
+    overflow: hidden;
+}
+
+/* Big title for the Challenger Dice section */
+.challenge-title
+{
+    font-size: 50px;
+    color: #FFFFFF;
+}
+
+/* Styling for the upper box containing, with no roll, the instructions, and then the challenge rolled */
+.active-challenge
+{
+    background: white;
+    width: 50vw;
+    border-radius: 30px;
+    padding: 20px 40px 20px 40px;
+}
+
+/* Styling & Placement for the Challenge List, giving it a maximum height */
+.challenge-list
+{
+    height: 60vh;   
+    display: flex;
+    justify-content: center;
+}
+
+/* Simple fix for the Japanese version */
+.challenge-listJP
+{
+    height: 80vh;
+}
+
+/* CSS Styling and Placement for the container of the challenge lists */
+.challenge-object
+{
+    background: linear-gradient(45deg, #ff5722, #f3c623);
+    width: 20vw;
+    height: 100%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+/* CSS Styling for each challenge box */
+.challenge-inside
+{
+    width: 90%;
+    background: #FFFFFF;
+    text-align: center;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+/* Styling for the inner title of the challenge lists (ex: Sportive) */
+.challenge-inside-title
+{
+    margin: 0;
+    font-size: 40px;
+    margin-top: 10px;
+    opacity: 60%;
+}
+
+/* CSS Styling for the customizable challenges */
+.challenge-input
+{
+    font-size: 15px;
+    padding: 15px;
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* CSS Styling for the button */
+.challenge-toggle
+{
+    width: 90%;
+    height: 40px;
+    margin-bottom: 10px;
+    background: linear-gradient(10deg, #5b8c5a, #00bdaa);
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    color: #ccf0e1;
+    font-weight: bold;
+    outline: none;
+}
+
+/* Gives a button like experience */
+.challenge-toggle:hover
+{
+    cursor: pointer;
+    background: linear-gradient(10deg, #5b8c5a, #5b8c5a);
+}
+
+/* CSS class that applies to the result of the dice Roll */
+.selected-challenge
+{
+    background: #00bdaa;
+}
+
+/* CSS Class that applies once dice is rolled (using JS) */
+.once-rolled
+{
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/**********
+
+CSS FOR THE MEGA DICE
+
+***********/
+
+
+/* Main Mega Dice container styling and placement */
+.mega-dice
+{
+    height: 93vh;
+    background: linear-gradient(45deg, #3E5151, #DECBA4);
+    background-size: 200% 200%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: MegaBackground 5s linear infinite;
+}
+
+/* Animation for the Background colors */
+@keyframes MegaBackground 
+{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+/* Placement of a container for the Mega Dice part */
+.mega-container
+{
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Placement for the values  */
+.mega-values
+{
+    display: flex;
+    align-items: center
+}
+
+/* Styling for the big title of the Mega Dice  */
+.mega-title
+{
+    color: #3E5151;
+    font-size: 70px;
+    margin: 0;
+}
+
+/* Styling for the left input of the Mega Dice  */
+.mega-value-from
+{
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    width: 10vw;
+    font-weight: 300;
+    color: #3E5151;
+    border-radius: 15px;
+    padding-left: 10px;
+
+}
+
+/* Styling for the right input of the Mega Dice  */
+.mega-value-to
+{
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    width: 10vw;
+    font-weight: 300;
+    color: #3E5151;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+/* Styling for the wave between the two inputs for the Mega Dice  */
+.mega-wave
+{
+    color: #DECBA4;
+    margin: 0;
+    font-size: 60px;
+    font-weight: bold;
+    margin: 0px 20px 0px 20px;
+}
+
+/* Description of the mega dice set on the center  */
+.mega-desc
+{
+    text-align: center;
+}
+
+/* Styling for the output of the mega dice */
+.mega-output
+{
+    font-size: 40px;
+    font-weight: bold;
+    color: #3E5151;
+}
+
+/* styling for the launch button of the mega dice */
+.mega-launch
+{
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    width: 10vw;
+    font-weight: 400;
+    color: #3E5151;
+    border-radius: 15px;
+}
+
+/* Styling for the footer, placement of the text on the middle */
+.footer
+{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/**************
+*
+* End of the CSS part
+*
+**************/

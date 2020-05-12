@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サイコロガーデン | ホーム</title>
+    <meta name="description" content="インターネットの一番サイコロラウンチャー ! 3D サイコロ, カストムサイコロ, チャレンジ, 。。。">
+    <link rel="stylesheet" href="./master.css">
+    <link rel="shortcut icon" href="./textures/logo.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Comments about the website's HTML available in the "index" part -->
+
+    <div class="opening-animation">
+        <img src="./textures/leaf.png" class="leaf leaf-1">
+        <img src="./textures/leaf.png" class="leaf leaf-2">
+        <img src="./textures/leaf.png" class="leaf leaf-3">
+        <img src="./textures/leaf.png" class="leaf leaf-4">
+        <img src="./textures/clouds.png" class="clouds">
+    </div>
+    <div class="dice-history">
+        <div class="history-button"></div>
+        <div class="history-information">
+            <p class="history-p">知ってますか ？ 先史時代からサイコロが存在します！ 見つかったいくつかのサイコロは4300年以上前のもので、その起源はアジアにあるようです。</p>
+        </div>
+    </div>
+    <header>
+        <div class="header-logo">
+            <a class="header-logo-title" href="#">サイコロガーデン</a>
+        </div>
+        <div class="header-items">
+            <a href="#" class="nav-item">クラシック</a>
+            <a href="#challenge-anchor" class="nav-item">チャレンジャー</a>
+            <a href="#mega-anchor" class="nav-item">メガサイコロ</a>
+
+        </div>
+        <div class="header-language">
+            <a href="./index.html" class="language">FR</a>
+            <a href="./index_en.html" class="language">EN</a>
+            <a href="#" class="language-on">JP</a>
+        </div>
+    </header>
+    <main>
+        <div class="traditional-dice">
+            <div class="dice-container">
+                <div class="dice-one-full dice-full">
+                    <div class="dice-one dice-object">
+                        <div class="dice">
+                            <div class="dice-face front"></div>
+                            <div class="dice-face right"></div>
+                            <div class="dice-face back"></div>
+                            <div class="dice-face left"></div>
+                            <div class="dice-face top"></div>
+                            <div class="dice-face bottom"></div>
+                        </div>
+                    </div>
+                    <div class="dice-score">
+                        <h2 class="dice-score-title"></h2>
+                    </div>
+                </div>
+                <div class="dice-two-full dice-full">
+                    <div class="dice-two dice-object">
+                        <div class="dice">
+                            <div class="dice-face front"></div>
+                            <div class="dice-face right"></div>
+                            <div class="dice-face back"></div>
+                            <div class="dice-face left"></div>
+                            <div class="dice-face top"></div>
+                            <div class="dice-face bottom"></div>
+                        </div>
+                    </div>
+                    <div class="dice-score">
+                        <h2 class="dice-score-title"></h2>
+                    </div>
+                </div>
+                <div class="dice-three-full dice-full">
+                    <div class="dice-three dice-object">
+                        <div class="dice">
+                            <div class="dice-face front"></div>
+                            <div class="dice-face right"></div>
+                            <div class="dice-face back"></div>
+                            <div class="dice-face left"></div>
+                            <div class="dice-face top"></div>
+                            <div class="dice-face bottom"></div>
+                        </div>
+                    </div>
+                    <div class="dice-score">
+                        <h2 class="dice-score-title"></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="score-container">
+                <h2 class="total-score-title">サイコロを振て !</h2>
+                <div class="number-of-dices">
+                    <button class="substract-dice">-</button>
+                    <h3 class="dice-counter">1</h3>
+                    <button class="add-dice">+</button>
+                </div>
+                <button id="challenge-anchor" class="launch-button">振る</button>
+            </div>
+        </div>
+        <div class="challenge-dice challenge-diceJP">
+            <div class="challenge-container">
+                <div class="challenge-title-container">
+                    <h2 class="challenge-title">チャレンジャーサイコロ</h2>
+                    <p class="active-challenge">チャレンジャーサイコロいらっしゃいませ ! Webサイトのこの部分では、ランダムにチャレンジを作成できます。カスタム値を入力して、独自のランダムチャレンジを作成することもできます。</p>
+                </div>
+                <div class="challenge-list challenge-listJP">
+                    <div class="challenge-object-one challenge-object">
+                        <h3 class="challenge-inside-title">スポーツ</h3>
+                        <div class="challenge-inside">
+                            <p>1. クラッディング (2分)</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>2. 40 押し上げる</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>3. 20 腹筋</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>4. 80 押し上げる</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>5. ランニング (20分)</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>6. チャレンジ１から３までです</p>
+                        </div>
+                        <button class="challenge-one-toggle challenge-toggle">振る</button>
+                    </div>
+                    <div class="challenge-object-two challenge-object">
+                        <h3 class="challenge-inside-title">コロナスペシャル</h3>
+                        <div class="challenge-inside">
+                            <p>1. 家にいる</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>2. ２０時０１分に拍手</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>3. 近所のDJになる</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>4. マスクを作る</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>5. イタリア人のように歌う</p>
+                        </div>
+                        <div class="challenge-inside">
+                            <p>6. イタリア人のようにパスタを調理する</p>
+                        </div>
+                        <button class="challenge-two-toggle challenge-toggle">振る</button>
+                    </div>
+                    <div class="challenge-object-three challenge-object">
+                        <h3 class="challenge-inside-title">カストム</h3>
+                        <div class="challenge-inside">
+                            <input class="challenge-input" type="text" placeholder="あなたのチャレンジ。。。">
+                        </div>
+                        <div class="challenge-inside">
+                            <input class="challenge-input" type="text" placeholder="あなたのチャレンジ。。。">
+                        </div>
+                        <div class="challenge-inside">
+                            <input class="challenge-input" type="text" placeholder="あなたのチャレンジ。。。">
+                        </div>
+                        <div class="challenge-inside">
+                            <input class="challenge-input" type="text" placeholder="あなたのチャレンジ。。。">
+                        </div>
+                        <div class="challenge-inside">
+                            <input class="challenge-input" type="text" placeholder="あなたのチャレンジ。。。">
+                        </div>
+                        <div class="challenge-inside">
+                            <input class="challenge-input" type="text" placeholder="あなたのチャレンジ。。。">
+                        </div>
+                        <button class="challenge-three-toggle challenge-toggle">振る</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mega-anchor" class="mega-dice">
+            <div class="mega-container">
+                <h2 class="mega-title">メガサイコロ</h2>
+                <p class="mega-desc">メガサイコロはとっても上手です ! ２番を書いてください、その後振てください!</p>
+                <div class="mega-values">
+                    <input class="mega-value-from" type="number" value="1">
+                    <p class="mega-wave">~</p>
+                    <input class="mega-value-to" type="number" value="600">
+                </div>
+                <h2 class="mega-output">サイコロを振て !</h2>
+                <button class="mega-launch">振る</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>コピライト 2020 © Leo Largillet（ラルギレト、レオ） - HETIC（ヘティック）.</p>
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+</html>
